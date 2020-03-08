@@ -3,8 +3,8 @@
 <h2 class="todo_list_title"><%= @todo_list.title %></h2>
 <p class="todo_list_sub_title"><%= @todo_list.description %></p>
 
-<%= form_with(url: "#{todo_list_path(@todo_list)}/delete_completed_tasks", method: :post, local: true) do |form| %>
-  <div class="actions">
+<%= form_with(url: "#{todo_list_path(@todo_list)}/delete_completed_tasks", method: :post, local: true, class: "delete_tasks_form") do |form| %>
+  <div class="actions delete-button">
     <%= form.submit(value: 'Delete Completed Tasks') %>
   </div>
 <% end %>
