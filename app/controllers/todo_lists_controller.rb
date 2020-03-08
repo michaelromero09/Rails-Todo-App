@@ -1,5 +1,5 @@
 class TodoListsController < ApplicationController
-  before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo_list, only: [:show, :edit, :update, :destroy, :delete_completed_tasks]
 
   # GET /todo_lists
   # GET /todo_lists.json
@@ -58,6 +58,16 @@ class TodoListsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def delete_completed_tasks
+    respond_to do |format|
+      if @todo_list.delete_completed_tasks
+        format.html { redirect_to @todo_list, notice: 'Completed tasks successfully deleted.' }
+      else
+        format.json { render json: @todo_list.errors, status: :unprocessable_entity }
+      end
     end
   end
 
