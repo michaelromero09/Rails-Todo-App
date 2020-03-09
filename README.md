@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a test repo for building a todo app in Ruby.
 
-Things you may want to cover:
+Steps to run repo locally:
 
-* Ruby version
+* Make sure you have Ruby 2.7.0 installed
 
-* System dependencies
+* Navigate to this repo in your terminal
 
-* Configuration
+* Run `bundle install`
 
-* Database creation
+* Run `rails s`
 
-* Database initialization
+* You should see the app running at localhost:3000 in your browser
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* You can run `rspec` in this folder in your terminal to see all the specs run
