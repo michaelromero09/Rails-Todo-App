@@ -9,6 +9,7 @@ end
 
 def destroy
   @todo_item = @todo_list.todo_items.find(params[:id])
+  print "BUTTER"
   if @todo_item.destroy
     flash[:success] = "Todo List item was deleted."
   else
